@@ -1,0 +1,6 @@
+{
+  "name": "English Game Dinosaur",
+  "description": "Web Game ôn luyện Tiếng Anh lớp 10 (Global Success) kết hợp lối chơi khủng long vượt chướng ngại vật, thử thách cột mốc, bộ sưu tập skin và bảng xếp hạng.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,44 @@
+const ALLOWED_TRANSITIONS = {
+  INTRO: ['LOGIN'],
+  LOGIN: ['INTRO', 'MAIN_MENU'],
+  MAIN_MENU: [
+    'MODE_SELECT',
+    'HOW_TO_PLAY',
+    'SKIN_COLLECTION',
+    'LEADERBOARD',
+    'CERTIFICATE',
+    'LOGIN',
+  ],
+  MODE_SELECT: [
+    'MAIN_MENU',
+    'HOW_TO_PLAY',
+    'SKIN_COLLECTION',
+    'LEADERBOARD',
+    'CERTIFICATE',
+  ],
+  HOW_TO_PLAY: [
+    'MODE_SELECT',
+    'PLAYING',
+    'MAIN_MENU',
+    'SKIN_COLLECTION',
+    'LEADERBOARD',
+    'CERTIFICATE',
+  ],
+  PLAYING: ['GAME_OVER', 'MAIN_MENU'],
+  GAME_OVER: [
+    'PLAYING',
+    'MODE_SELECT',
+    'MAIN_MENU',
+    'LEADERBOARD',
+    'SKIN_COLLECTION',
+    'CERTIFICATE',
+  ],
+  SKIN_COLLECTION: ['MAIN_MENU', 'MODE_SELECT', 'LEADERBOARD', 'CERTIFICATE'],
+  LEADERBOARD: ['MAIN_MENU', 'MODE_SELECT', 'SKIN_COLLECTION', 'CERTIFICATE'],
+  CERTIFICATE: ['MAIN_MENU', 'MODE_SELECT', 'SKIN_COLLECTION', 'LEADERBOARD'],
+};
+
+export function canTransitionScreen(from, to) {
+  if (from === to) return true;
+  return ALLOWED_TRANSITIONS[from]?.includes(to) ?? false;
+}
